@@ -5,6 +5,20 @@ const getAIClient = () => {
   return new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 };
 
+const getLangName = (code: string): string => {
+  const langMap: Record<string, string> = {
+    'en-US': 'English',
+    'es-ES': 'Spanish',
+    'fr-FR': 'French',
+    'zh-CN': 'Mandarin Chinese',
+    'vi-VN': 'Vietnamese',
+    'ar-SA': 'Arabic',
+    'hi-IN': 'Hindi',
+    'ru-RU': 'Russian',
+  };
+  return langMap[code] || code;
+};
+
 export async function translateMedicalText(
   text: string,
   sourceLang: string,
@@ -12,9 +26,12 @@ export async function translateMedicalText(
 ): Promise<string> {
   const ai = getAIClient();
   
+  const srcLangName = getLangName(sourceLang);
+  const tgtLangName = getLangName(targetLang);
+  
   const systemInstruction = `
     You are an expert medical interpreter with 20 years of experience in clinical settings.
-    CRITICAL INSTRUCTION: Translate the following healthcare conversation from ${sourceLang} to ${targetLang} with 100% medical accuracy.
+    CRITICAL INSTRUCTION: Translate the following healthcare conversation from ${srcLangName} to ${tgtLangName} with 100% medical accuracy.
     1. NEVER alter medical terms, medication names, or dosages.
     2. Maintain the exact meaning. Do NOT paraphrase or simplify clinical terminology unless it is a direct explanation from the provider.
     3. Ensure the tone remains professional yet accessible.
