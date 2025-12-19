@@ -1,0 +1,145 @@
+:root {
+  --bg: #f6f7fb;
+  --text: #0f172a;
+  --muted: #475569;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --border: rgba(15, 23, 42, 0.06);
+  --shadow: 0 8px 30px rgba(12, 16, 28, 0.06);
+
+  --accent: #8ec5ff;
+  --accent-2: #c7a6ff;
+  --accent-3: #9de2d3;
+  --accent-4: #ffd6a5;
+}
+html, body {
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(200, 230, 255, 0.4) 0%, rgba(200, 230, 255, 0) 40%),
+    radial-gradient(circle at 80% 0%, rgba(219, 200, 255, 0.35) 0%, rgba(219, 200, 255, 0) 40%),
+    radial-gradient(circle at 0% 80%, rgba(255, 214, 165, 0.35) 0%, rgba(255, 214, 165, 0) 40%),
+    var(--bg);
+  overflow-x: hidden;
+  color: var(--text);
+}
+.custom-scrollbar {
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-radius: 8px;
+  border: 2px solid #fff;
+}
+.f-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.f-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(12, 16, 28, 0.08);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+.f-card--accent {
+  border-image: linear-gradient(90deg, var(--accent), var(--accent-2)) 1;
+}
+.f-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 160ms ease, box-shadow 200ms ease, background 200ms ease, color 200ms ease;
+  will-change: transform;
+}
+.f-btn:active { transform: scale(0.98); }
+.f-btn--primary {
+  color: #0b1020;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+  box-shadow: 0 8px 20px rgba(142, 197, 255, 0.35);
+}
+.f-btn--primary:hover { box-shadow: 0 10px 26px rgba(142, 197, 255, 0.45); }
+.f-btn--secondary {
+  color: #1e293b;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  border: 1px solid var(--border);
+}
+.f-btn--danger {
+  color: #fff;
+  background: linear-gradient(135deg, #ff7a7a, #ffb3a3);
+  box-shadow: 0 8px 20px rgba(255, 122, 122, 0.35);
+}
+.f-btn--pulse-active {
+  animation: pulseGlow 1.4s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(199, 166, 255, 0.55); }
+  70% { box-shadow: 0 0 0 12px rgba(199, 166, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(199, 166, 255, 0); }
+}
+.f-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.f-select select {
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  color: var(--text);
+}
+.f-select select:focus { outline: none; }
+.f-header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.micro {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  color: #64748b;
+}
+.micro--accent { color: #6366f1; }
+.f-body { color: #334155; }
+.f-body strong { color: #0f172a; }
+.f-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  color: #fff;
+  font-weight: 700;
+}
+.f-footer {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border);
+}
+.f-container { max-width: 1180px; margin: 0 auto; }
+.hidden-visually { position: absolute; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(0 0 0 0); overflow: hidden; white-space: nowrap; }
+.med-highlight {
+  background: #fff4cc;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 8px;
+  padding: 0 6px;
+  box-shadow: 0 2px 8px rgba(12, 16, 28, 0.06);
+}

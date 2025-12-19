@@ -1,0 +1,8 @@
+
+{
+  "name": "HealthTrans - Medical Interpreter",
+  "description": "A real-time, medical-aware translation tool for healthcare providers and patients.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
