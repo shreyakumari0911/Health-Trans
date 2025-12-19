@@ -173,7 +173,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div ref={appContentRef} className="flex flex-col h-screen max-w-full mx-auto bg-gradient-to-b from-slate-50 via-blue-50 to-slate-50 relative overflow-hidden selection:bg-blue-200/80 f-container px-3 sm:px-4 md:px-6">
+    <div className="max-w-full mx-auto bg-gradient-to-b from-slate-50 via-blue-50 to-slate-50 relative overflow-hidden selection:bg-blue-200/80 f-container px-3 sm:px-4 md:px-6">
+      <div ref={appContentRef} className="flex flex-col h-screen">
       {/* Decorative background elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-200/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -349,6 +350,8 @@ const App: React.FC = () => {
             🛡️ Privacy-focused prototype • Patient data safeguarded during use
           </p>
         </div>
+      </div>
+
       </div>
 
       {/* One-time Medical Safety Disclaimer Modal */}
