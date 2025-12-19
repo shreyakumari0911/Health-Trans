@@ -4,7 +4,7 @@ This contains everything you need to run your app locally.
 
 This contains everything you need to run the app locally and deploy it.
 
-##For better experience open it on *CHROME* 
+For better experience open it on *CHROME* 
 
 
 Deployed here --> https://health-trans.vercel.app/
